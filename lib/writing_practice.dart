@@ -15,9 +15,14 @@ class WritingPracState extends State<WritingPrac> {
   ];
   int lb = Random().nextInt(10);
   String jen = "EN >>> PL";
-  String que = 'AMONGUS';
+  String que = 'TEST';
   String odp = '', dz = "", podane = "";
 
+  @override
+  void initState() {
+    super.initState();
+    losuj();
+  }
 
   void losuj(){
       lb = Random().nextInt(10);
@@ -25,13 +30,16 @@ class WritingPracState extends State<WritingPrac> {
         odp = english[lb];
       });
   }
-  void Sprawdz() {
+  sprawdz() {
+    setState(() {
+      que = "";
       if(podane == polish[lb]){
-          dz = "DOBRZE!!!";
+        dz = "DOBRZE!!!";
       }
       else{
-          dz = "ZLE>:(";
+        dz = "ZLE>:(";
       }
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -68,7 +76,7 @@ class WritingPracState extends State<WritingPrac> {
               style: TextStyle(fontSize: 24.0),
             ),
             ElevatedButton(
-              onPressed: Sprawdz,
+              onPressed: sprawdz,
               child: Text('Sprawdz'),
             ),
           ],
