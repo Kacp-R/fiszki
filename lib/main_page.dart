@@ -13,42 +13,49 @@ class Main extends StatefulWidget {
 class _MainState extends State<Main>{
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Main Page'),
+    return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+        accentColor: Colors.orange,
+        // inne parametry motywu
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            MaterialButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Flashcards()),
-                );
-              },
-              child: Text('Flashcards'),
-            ),
-            MaterialButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => WritingPrac()),
-                );
-              },
-              child: Text('Prac'),
-            ),
-            MaterialButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Stats()),
-                );
-              },
-              child: Text('Stats'),
-            ),
-          ],
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Main Page'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              MaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Flashcards()),
+                  );
+                },
+                child: Text('Flashcards'),
+              ),
+              MaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WritingPrac()),
+                  );
+                },
+                child: Text('Prac'),
+              ),
+              MaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Stats()),
+                  );
+                },
+                child: Text('Stats'),
+              ),
+            ],
+          ),
         ),
       ),
     );
