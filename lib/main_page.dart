@@ -1,4 +1,6 @@
 import 'package:fiszki/flashcards.dart';
+import 'package:fiszki/stats.dart';
+import 'package:fiszki/writing_practice.dart';
 import 'package:flutter/material.dart';
 
 class Main extends StatefulWidget {
@@ -26,16 +28,25 @@ class _MainState extends State<Main>{
                   MaterialPageRoute(builder: (context) => Flashcards()),
                 );
               },
-              child: Text('Go to Page 1'),
+              child: Text('Flashcards'),
             ),
             MaterialButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Flashcards()),
+                  MaterialPageRoute(builder: (context) => WritingPrac()),
                 );
               },
-              child: Text('Go to Page 2'),
+              child: Text('Prac'),
+            ),
+            MaterialButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Stats()),
+                );
+              },
+              child: Text('Stats'),
             ),
           ],
         ),
