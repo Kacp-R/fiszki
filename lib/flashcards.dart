@@ -1,31 +1,40 @@
+//bartek
+
+import 'dart:math';
 import 'package:fiszki/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flip_card/flip_card.dart';
 
 class Flashcards extends StatelessWidget {
+  const Flashcards({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Fiszki',
       theme: ThemeData(
-        primarySwatch: Colors.lime,
-        scaffoldBackgroundColor: Colors.black,
-        appBarTheme: AppBarTheme(
-          color: Colors.black,
-          foregroundColor: Colors.yellow,
-        )
-      ),
-      home: FlashcardsPage(),
+          scaffoldBackgroundColor: Colors.black54,
+          primarySwatch: Colors.lime,
+          appBarTheme: const AppBarTheme(
+            color: Colors.black54,
+            foregroundColor: Colors.lime,
+          )),
+      home: const FlashcardsPage(),
     );
   }
 }
 
 class FlashcardsPage extends StatefulWidget {
+  const FlashcardsPage({super.key});
+
   @override
   _FlashcardsPageState createState() => _FlashcardsPageState();
 }
 
 class _FlashcardsPageState extends State<FlashcardsPage> {
+
+  //ofc nie pisałem tej listy ręcznie ale i tak sporo czasu na tym zeszło ;///
+
   List<Flashcard> flashcards = [
     Flashcard('Animal', 'Zwierzę'),
     Flashcard('Art', 'Sztuka'),
@@ -91,24 +100,167 @@ class _FlashcardsPageState extends State<FlashcardsPage> {
     Flashcard('Finger', 'Palec'),
     Flashcard('Fire', 'Ogień'),
     Flashcard('Fish', 'Ryba'),
+    Flashcard('Flower', 'Kwiat'),
+    Flashcard('Food', 'Jedzenie'),
+    Flashcard('Foot', 'Stopa'),
+    Flashcard('Football', 'Piłka nożna'),
+    Flashcard('Forest', 'Las'),
+    Flashcard('Friend', 'Przyjaciel'),
+    Flashcard('Fruit', 'Owoc'),
+    Flashcard('Game', 'Gra'),
+    Flashcard('Garage', 'Garaż'),
+    Flashcard('Garden', 'Ogród'),
+    Flashcard('Gift', 'Prezent'),
+    Flashcard('Girl', 'Dziewczyna'),
+    Flashcard('Glass', 'Szkło'),
+    Flashcard('Glasses', 'Okulary'),
+    Flashcard('Glove', 'Rękawiczka'),
+    Flashcard('Goat', 'Koza'),
+    Flashcard('Gold', 'Złoto'),
+    Flashcard('Goodbye', 'Do widzenia'),
+    Flashcard('Grass', 'Trawa'),
+    Flashcard('Hair', 'Włosy'),
+    Flashcard('Hand', 'Ręka'),
+    Flashcard('Hat', 'Czapka'),
+    Flashcard('Head', 'Głowa'),
+    Flashcard('Heart', 'Serce'),
+    Flashcard('Helicopter', 'Śmigłowiec'),
+    Flashcard('Holiday', 'Wakacje'),
+    Flashcard('Idea', 'Pomysł'),
+    Flashcard('Ink', 'Tusz'),
+    Flashcard('Iron', 'Żelazo'),
+    Flashcard('Ice', 'Lód'),
+    Flashcard('Island', 'Wyspa'),
+    Flashcard('Ivory', 'Kość słoniowa'),
+    Flashcard('Incline', 'Wznosić się'),
+    Flashcard('Joy', 'Radość'),
+    Flashcard('Judge', 'Sędzia'),
+    Flashcard('Juice', 'Sok'),
+    Flashcard('July', 'Lipiec'),
+    Flashcard('Jump', 'Skok'),
+    Flashcard('Jungle', 'Dżungla'),
+    Flashcard('Junior', 'Młodszy'),
+    Flashcard('Jacket', 'Kurtka'),
+    Flashcard('Jam', 'Dżem'),
+    Flashcard('January', 'Styczeń'),
+    Flashcard('Jaw', 'Szczęka'),
+    Flashcard('Jazz', 'Jazz'),
+    Flashcard('Jeans', 'Dżinsy'),
+    Flashcard('Kangaroo', 'Kangur'),
+    Flashcard('Key', 'Klucz'),
+    Flashcard('Keyboard', 'Klawiatura'),
+    Flashcard('Kid', 'Dziecko'),
+    Flashcard('King', 'Król'),
+    Flashcard('Kitchen', 'Kuchnia'),
+    Flashcard('Kite', 'Latawiec'),
+    Flashcard('Knife', 'Nóż'),
+    Flashcard('Leaf', 'Liść'),
+    Flashcard('Learning', 'Nauka'),
+    Flashcard('Leg', 'Noga'),
+    Flashcard('Library', 'Biblioteka'),
+    Flashcard('Life', 'Życie'),
+    Flashcard('Light', 'Światło'),
+    Flashcard('Lion', 'Lew'),
+    Flashcard('Lip', 'Usta'),
+    Flashcard('List', 'Lista'),
+    Flashcard('Lizard', 'Jaszczurka'),
+    Flashcard('Lock', 'Zamek'),
+    Flashcard('Lollipop', 'Lizak'),
+    Flashcard('Love', 'Miłość'),
+    Flashcard('Math', 'Matematyka'),
+    Flashcard('Medicine', 'Medycyna'),
+    Flashcard('Meeting', 'Spotkanie'),
+    Flashcard('Memory', 'Pamięć'),
+    Flashcard('Microphone', 'Mikrofon'),
+    Flashcard('Milk', 'Mleko'),
+    Flashcard('Nail', 'Paznokieć'),
+    Flashcard('Name', 'Imię'),
+    Flashcard('Nature', 'Natura'),
+    Flashcard('Neck', 'Szyja'),
+    Flashcard('Needle', 'Igła'),
+    Flashcard('Newspaper', 'Gazeta'),
+    Flashcard('Night', 'Noc'),
+    Flashcard('Notebook', 'Notatnik'),
+    Flashcard('Ocean', 'Ocean'),
+    Flashcard('Office', 'Biuro'),
+    Flashcard('Oil', 'Olej'),
+    Flashcard('Olympics', 'Igrzyska olimpijskie'),
+    Flashcard('Onion', 'Cebula'),
+    Flashcard('Orange', 'Pomarańcza'),
+    Flashcard('Oven', 'Piekarnik'),
+    Flashcard('Owl', 'Sowa'),
+    Flashcard('Pancake', 'Naleśnik'),
+    Flashcard('Panda', 'Panda'),
+    Flashcard('Pants', 'Spodnie'),
+    Flashcard('Paper', 'Papier'),
+    Flashcard('Park', 'Park'),
+    Flashcard('Parrot', 'Papuga'),
+    Flashcard('Pencil', 'Ołówek'),
+    Flashcard('Penguin', 'Pingwin'),
+    Flashcard('Rain', 'Deszcz'),
+    Flashcard('Rainbow', 'Tęcza'),
+    Flashcard('Rat', 'Szczur'),
+    Flashcard('Reading', 'Czytanie'),
+    Flashcard('Restaurant', 'Restauracja'),
+    Flashcard('River', 'Rzeka'),
+    Flashcard('Sailboat', 'Żaglówka'),
+    Flashcard('Sand', 'Piasek'),
+    Flashcard('Sandwich', 'Kanapka'),
+    Flashcard('Satellite', 'Satelita'),
+    Flashcard('School', 'Szkoła'),
+    Flashcard('Science', 'Nauka'),
+    Flashcard('Sea', 'Morze'),
+    Flashcard('Taxi', 'Taksówka'),
+    Flashcard('Tea', 'Herbata'),
+    Flashcard('Teacher', 'Nauczyciel'),
+    Flashcard('Telephone', 'Telefon'),
+    Flashcard('Television', 'Telewizja'),
+    Flashcard('Tennis', 'Tenis'),
+    Flashcard('Thief', 'Złodziej'),
+    Flashcard('Think', 'Myśleć'),
+    Flashcard('Thirsty', 'Spragniony'),
+    Flashcard('Ugly', 'Brzydki'),
+    Flashcard('Umbrella', 'Parasol'),
+    Flashcard('Uncle', 'Wujek'),
+    Flashcard('Under', 'Pod'),
+    Flashcard('Understand', 'Rozumieć'),
+    Flashcard('Unhappy', 'Nieszczęśliwy'),
+    Flashcard('Unique', 'Wyjątkowy'),
+    Flashcard('Unit', 'Jednostka'),
+    Flashcard('University', 'Uniwersytet'),
+    Flashcard('Waiter', 'Kelner'),
+    Flashcard('Wall', 'Ściana'),
+    Flashcard('Wallet', 'Portfel'),
+    Flashcard('Washing machine', 'Pralka'),
+    Flashcard('Watch', 'Zegarek'),
+    Flashcard('Water', 'Woda'),
+    Flashcard('Wedding', 'Ślub'),
+    Flashcard('Week', 'Tydzień'),
+    Flashcard('Yacht', 'Jacht'),
+    Flashcard('Yard', 'Podwórko'),
+    Flashcard('Year', 'Rok'),
+    Flashcard('Yellow', 'Żółty'),
+    Flashcard('Zebra', 'Zebra'),
+    Flashcard('Zoo', 'Zoo'),
+    Flashcard('Zipper', 'Zamek błyskawiczny'),
+    Flashcard('Zone', 'Strefa'),
   ];
 
   int index = 0;
+  List<int> prevIndex = [];
 
+//geez zdecydowanie za dlugo zajelo robienie zeby te funkcje dzialaly
   void _nextFlashcard() {
     setState(() {
-      index++;
-      if (index >= flashcards.length) {
-        index = 0;
-      }
+      prevIndex.add(index);
+      index = Random().nextInt(flashcards.length);
     });
   }
 
   void _prevFlashcard() {
     setState(() {
-      index--;
-      if (index < 0) {
-        index = flashcards.length - 1;
+      if (prevIndex.isNotEmpty) {
+        index = prevIndex.removeLast();
       }
     });
   }
@@ -117,14 +269,14 @@ class _FlashcardsPageState extends State<FlashcardsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton (
-          icon: Icon(Icons.arrow_back_ios_new),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Main()),
-              );
-            },
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Main()),
+            );
+          },
         ),
       ),
       body: Column(
@@ -133,7 +285,7 @@ class _FlashcardsPageState extends State<FlashcardsPage> {
           FlipCard(
             direction: FlipDirection.HORIZONTAL,
             front: ClipRRect(
-              borderRadius: BorderRadius.circular(20), // ustalenie zaokrąglenia rogów
+              borderRadius: BorderRadius.circular(50),
               child: Container(
                 height: 500,
                 width: 330,
@@ -141,13 +293,13 @@ class _FlashcardsPageState extends State<FlashcardsPage> {
                 child: Center(
                   child: Text(
                     flashcards[index].pageone,
-                    style: TextStyle(fontSize: 36, color: Colors.white),
+                    style: const TextStyle(fontSize: 36, color: Colors.white),
                   ),
                 ),
               ),
             ),
             back: ClipRRect(
-              borderRadius: BorderRadius.circular(20), // ustalenie zaokrąglenia rogów
+              borderRadius: BorderRadius.circular(50),
               child: Container(
                 height: 500,
                 width: 330,
@@ -155,41 +307,45 @@ class _FlashcardsPageState extends State<FlashcardsPage> {
                 child: Center(
                   child: Text(
                     flashcards[index].pagetwo,
-                    style: TextStyle(fontSize: 36, color: Colors.black),
+                    style: const TextStyle(fontSize: 36, color: Colors.black),
                   ),
                 ),
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                width: 125,
+                width: 145,
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   color: Colors.lime,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(50),
                 ),
                 child: IconButton(
-                  icon: Icon(Icons.arrow_back_ios_new),
-                  color: Colors.cyan,
+                  icon: const Icon(Icons.arrow_back_ios, size: 30),
+                  color: Colors.black,
                   onPressed: _prevFlashcard,
                 ),
               ),
               Container(
-                width: 125,
+                width: 145,
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   color: Colors.lime,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(50),
                 ),
                 child: IconButton(
-                  icon: Icon(Icons.arrow_forward_ios),
-                  color: Colors.cyan,
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                    size: 30,
+                  ),
+                  color: Colors.black,
                   onPressed: _nextFlashcard,
                 ),
               ),
-
             ],
           ),
         ],
@@ -204,4 +360,3 @@ class Flashcard {
 
   Flashcard(this.pageone, this.pagetwo);
 }
-

@@ -1,0 +1,1 @@
+// tu raczej będzie zbior fiszek zeby kodu tamtego nie syfić

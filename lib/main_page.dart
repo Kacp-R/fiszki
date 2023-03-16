@@ -15,9 +15,8 @@ class _MainState extends State<Main>{
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.blue,
-        accentColor: Colors.orange,
-        // inne parametry motywu
+        brightness: Brightness.dark,
+        primaryColor: Colors.amber,
       ),
       home: Scaffold(
         appBar: AppBar(
