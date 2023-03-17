@@ -28,7 +28,7 @@ class _MainState extends State<Main>{
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => FlashcardsPage()),
+                    MaterialPageRoute(builder: (context) => FlashcardsPage(cAnswers: cAnswers, tAnswers: tAnswers,)),
                   );
                 },
                 child: Text('Flashcards',
