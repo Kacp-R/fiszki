@@ -62,7 +62,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Main()),
+              MaterialPageRoute(builder: (context) => const Main(cAnswers:0 , tAnswers:0)),
             );
           },
         ),
