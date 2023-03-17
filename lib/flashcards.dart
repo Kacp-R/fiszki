@@ -45,6 +45,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
     });
   }
 
+
   void prevFlashcard() {
     setState(() {
       if (prevIndex.isNotEmpty) {
