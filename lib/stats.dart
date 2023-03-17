@@ -16,15 +16,15 @@ class Stats extends StatelessWidget {
         child: Column(children: [
           Text(
             'stats',
-            style: TextStyle(fontSize: 24.0),
+            style: TextStyle(fontSize: 24.0, color: Colors.white),
           ),
           Text(
             '$cAnswers',
-            style: TextStyle(fontSize: 24.0),
+            style: TextStyle(fontSize: 24.0, color: Colors.white),
           ),
           Text(
             '$tAnswers',
-            style: TextStyle(fontSize: 24.0),
+            style: TextStyle(fontSize: 24.0, color: Colors.white),
           ),
         ],
         ),
