@@ -38,16 +38,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Fiszki',
-      theme: ThemeData(
-          scaffoldBackgroundColor: Colors.black54,
-          primarySwatch: Colors.lime,
-          appBarTheme: const AppBarTheme(
-            color: Colors.black54,
-            foregroundColor: Colors.lime,
-          )),
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new),
@@ -131,8 +122,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 
 }

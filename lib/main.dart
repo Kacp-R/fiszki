@@ -10,8 +10,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Nauka języka',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.yellow,
+        scaffoldBackgroundColor: Colors.black,
         primarySwatch: Colors.lime,
+        appBarTheme: AppBarTheme(
+          color: Colors.black,
+          foregroundColor: Colors.lime,
+        )
       ),
       home: Main(cAnswers: 0, tAnswers: 0,),
     );

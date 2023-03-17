@@ -34,7 +34,8 @@ class _MainState extends State<Main>{
                     MaterialPageRoute(builder: (context) => FlashcardsPage()),
                   );
                 },
-                child: Text('Flashcards'),
+                child: Text('Flashcards',
+                style: TextStyle(color: Colors.white),),
               ),
               MaterialButton(
                 onPressed: () {
@@ -43,7 +44,8 @@ class _MainState extends State<Main>{
                     MaterialPageRoute(builder: (context) => WritingPrac()),
                   );
                 },
-                child: Text('Prac'),
+                child: Text('Prac',
+                  style: TextStyle(color: Colors.white),),
               ),
               MaterialButton(
                 onPressed: () {
@@ -52,7 +54,8 @@ class _MainState extends State<Main>{
                     MaterialPageRoute(builder: (context) => Stats(cAnswers: cAnswers, tAnswers: tAnswers,)),
                   );
                 },
-                child: Text('Stats'),
+                child: Text('Stats',
+                  style: TextStyle(color: Colors.white),),
               ),
             ],
           ),
