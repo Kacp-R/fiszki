@@ -8,8 +8,7 @@ class WritingPrac extends StatefulWidget {
 }
 
 class WritingPracState extends State<WritingPrac> {
-  int _cAnswers = 0;
-  int _tAnswers = 0;
+  final fieldText = TextEditingController();
   final List<String> english = [
     'Apple', 'Banana', 'Cherry', 'Dog', 'Elephant', 'Football', 'Guitar', 'House', 'Ice cream', 'Jacket'
   ];
@@ -17,49 +16,79 @@ class WritingPracState extends State<WritingPrac> {
     'Jablko', 'Banan', 'Wisnia', 'Pies', 'Slon', 'Pilkanozna', 'Gitara', 'Dom', 'lody', 'kurtka'
   ];
   int lb = Random().nextInt(10);
-  String jen = "EN >>> PL";
   String que = 'TEST';
-  String odp = '', dz = "", podane = "";
+  String odp = '', dz = "", podane = "", jen = "";
+  int streak = 0;
 
   @override
   void initState() {
     super.initState();
+    start();
+  }
+  void start(){
+    odp = '';
+    dz = "";
+    podane = "";
+    jen = "";
+    if(Random().nextBool() == true){
+      jen = "EN >>> PL";
+    }
+    else{
+      jen = "PL >>> EN";
+    }
     losuj();
   }
-
   void losuj(){
       lb = Random().nextInt(10);
       setState(() {
-        odp = english[lb];
+        if(jen == "EN >>> PL") {
+          odp = english[lb];
+        }
+        else if(jen == "PL >>> EN"){
+          odp = polish[lb];
+        }
       });
   }
-  sprawdz() {
+  void sprawdz() {
     setState(() {
       que = "";
-      if(podane.toLowerCase() == polish[lb].toLowerCase()){
-        dz = "DOBRZE!!!";
-        _cAnswers++;
+      if(jen == "EN >>> PL"){
+        if(podane.toLowerCase() == polish[lb].toLowerCase()){
+          dz = "DOBRZE!!!";
+          streak++;
+        }
+        else{
+          dz = "ZLE>:(";
+          streak = 0;
+        }
       }
-      else{
-        dz = "ZLE>:(";
+      else if(jen == "PL >>> EN"){
+        if(podane.toLowerCase() == english[lb].toLowerCase()){
+          dz = "DOBRZE!!!";
+          streak++;
+        }
+        else{
+          dz = "ZLE>:(";
+          streak = 0;
+        }
       }
-      _tAnswers++;
     });
   }
+
+  void nastepne(){
+    fieldText.clear();
+    if(dz == "DOBRZE!!!"){
+      start();
+    }
+    else{
+      streak = 0;
+      start();
+    }
+  }
+  //dodac style
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Main(cAnswers: _cAnswers, tAnswers: _tAnswers)),
-            );
-          },
-        ),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -76,7 +105,7 @@ class WritingPracState extends State<WritingPrac> {
               odp,
               style: TextStyle(fontSize: 24.0),
             ),
-            TextFormField(
+            TextField(
               decoration: InputDecoration(
                 labelText: 'ODPOWIEDZ',
                 border: OutlineInputBorder(),
@@ -86,6 +115,7 @@ class WritingPracState extends State<WritingPrac> {
                   podane = text;
                 });
               },
+              controller: fieldText,
             ),
             Text(
               dz,
@@ -94,6 +124,14 @@ class WritingPracState extends State<WritingPrac> {
             ElevatedButton(
               onPressed: sprawdz,
               child: Text('Sprawdz'),
+            ),
+            ElevatedButton(
+              onPressed: nastepne,
+              child: Text('Nastepne'),
+            ),
+            Text(
+              "streak:" + streak.toString(),
+              style: TextStyle(fontSize: 24.0),
             ),
           ],
         ),
