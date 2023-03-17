@@ -20,9 +20,6 @@ class _MainState extends State<Main>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Main Page'),
-        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +32,7 @@ class _MainState extends State<Main>{
                   );
                 },
                 child: Text('Flashcards',
-                style: TextStyle(color: Colors.white),),
+                style: TextStyle(color: Colors.lime),),
               ),
               MaterialButton(
                 onPressed: () {
@@ -45,7 +42,7 @@ class _MainState extends State<Main>{
                   );
                 },
                 child: Text('Prac',
-                  style: TextStyle(color: Colors.white),),
+                  style: TextStyle(color: Colors.lime),),
               ),
               MaterialButton(
                 onPressed: () {
@@ -55,7 +52,7 @@ class _MainState extends State<Main>{
                   );
                 },
                 child: Text('Stats',
-                  style: TextStyle(color: Colors.white),),
+                  style: TextStyle(color: Colors.lime),),
               ),
             ],
           ),
