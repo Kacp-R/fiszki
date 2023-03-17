@@ -8,6 +8,8 @@ class WritingPrac extends StatefulWidget {
 }
 
 class WritingPracState extends State<WritingPrac> {
+  int _cAnswers = 0;
+  int _tAnswers = 0;
   final fieldText = TextEditingController();
   final List<String> english = [
     'Apple', 'Banana', 'Cherry', 'Dog', 'Elephant', 'Football', 'Guitar', 'House', 'Ice cream', 'Jacket'
@@ -89,6 +91,18 @@ class WritingPracState extends State<WritingPrac> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Main(cAnswers: _cAnswers, tAnswers: _tAnswers)),
+            );
+          },
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

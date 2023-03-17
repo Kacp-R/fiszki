@@ -8,16 +8,22 @@ import 'package:flip_card/flip_card.dart';
 
 
 class FlashcardsPage extends StatefulWidget {
-  const FlashcardsPage({super.key});
+  final int cAnswers;
+  final int tAnswers;
+  const FlashcardsPage({super.key, required this.cAnswers, required this.tAnswers});
 
   @override
-  FlashcardsPageState createState() => FlashcardsPageState();
+  FlashcardsPageState createState() => FlashcardsPageState(cAnswers, tAnswers);
 }
 
 class FlashcardsPageState extends State<FlashcardsPage> {
+  final int cAnswers;
+  final int tAnswers;
 
   int index = 0;
   List <int> prevIndex = [];
+
+  FlashcardsPageState(this.cAnswers, this.tAnswers);
 
 //geez zdecydowanie za dlugo zajelo robienie zeby te funkcje dzialaly
   void nextFlashcard() {
@@ -46,7 +52,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const Main(cAnswers: 0, tAnswers: 0)),
+                    builder: (context) => Main(cAnswers: cAnswers, tAnswers: tAnswers)),
               );
             },
           ),
@@ -79,7 +85,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
                   child: Center(
                     child: Text(
                       flashcards[index].pagetwo,
-                      style: const TextStyle(fontSize: 36, color: Colors.black),
+                      style: const TextStyle(fontSize: 36, color: Colors.white),
                     ),
                   ),
                 ),
@@ -98,7 +104,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
                   ),
                   child: IconButton(
                     icon: const Icon(Icons.arrow_back_ios, size: 30),
-                    color: Colors.black,
+                    color: Colors.white,
                     onPressed: prevFlashcard,
                   ),
                 ),
@@ -114,7 +120,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
                       Icons.arrow_forward_ios,
                       size: 30,
                     ),
-                    color: Colors.black,
+                    color: Colors.white,
                     onPressed: nextFlashcard,
                   ),
                 ),
