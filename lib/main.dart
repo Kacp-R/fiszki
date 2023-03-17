@@ -7,7 +7,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      title: 'Nauka języka',
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.yellow,
+        primarySwatch: Colors.lime,
+      ),
       home: Main(cAnswers: 0, tAnswers: 0,),
     );
   }

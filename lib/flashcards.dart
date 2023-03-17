@@ -36,6 +36,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Fiszki',

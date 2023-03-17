@@ -19,12 +19,7 @@ class _MainState extends State<Main>{
   _MainState(this.cAnswers, this.tAnswers);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: Colors.amber,
-      ),
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Text('Main Page'),
         ),
@@ -62,7 +57,6 @@ class _MainState extends State<Main>{
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }
