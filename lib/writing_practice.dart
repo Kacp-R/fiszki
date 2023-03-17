@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fiszki/main_page.dart';
 import 'dart:math';
 
 class WritingPrac extends StatefulWidget {
@@ -7,6 +8,8 @@ class WritingPrac extends StatefulWidget {
 }
 
 class WritingPracState extends State<WritingPrac> {
+  int _cAnswers = 0;
+  int _tAnswers = 0;
   final List<String> english = [
     'Apple', 'Banana', 'Cherry', 'Dog', 'Elephant', 'Football', 'Guitar', 'House', 'Ice cream', 'Jacket'
   ];
@@ -33,17 +36,30 @@ class WritingPracState extends State<WritingPrac> {
   sprawdz() {
     setState(() {
       que = "";
-      if(podane == polish[lb]){
+      if(podane.toLowerCase() == polish[lb].toLowerCase()){
         dz = "DOBRZE!!!";
+        _cAnswers++;
       }
       else{
         dz = "ZLE>:(";
       }
+      _tAnswers++;
     });
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Main(cAnswers: _cAnswers, tAnswers: _tAnswers)),
+            );
+          },
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

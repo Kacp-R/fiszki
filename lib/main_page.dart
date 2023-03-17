@@ -4,13 +4,19 @@ import 'package:fiszki/writing_practice.dart';
 import 'package:flutter/material.dart';
 
 class Main extends StatefulWidget {
-  const Main({Key? key}) : super(key: key);
+  final int cAnswers;
+  final int tAnswers;
+  const Main({Key? key, required this.cAnswers, required this.tAnswers}) : super(key: key);
 
   @override
-  State<Main> createState() => _MainState();
+  State<Main> createState() => _MainState(cAnswers, tAnswers);
 }
 
 class _MainState extends State<Main>{
+  final int cAnswers;
+  final int tAnswers;
+
+  _MainState(this.cAnswers, this.tAnswers);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,7 +54,7 @@ class _MainState extends State<Main>{
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Stats()),
+                    MaterialPageRoute(builder: (context) => Stats(cAnswers: cAnswers, tAnswers: tAnswers,)),
                   );
                 },
                 child: Text('Stats'),
