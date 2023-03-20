@@ -19,7 +19,7 @@ class WritingPracState extends State<WritingPrac> {
   String que = 'TEST';
   String odp = '', dz = "", podane = "", jen = "";
   int streak = 0;
-
+  int cAnswers = 0, tAnswers = 0;
   @override
   void initState() {
     super.initState();
@@ -89,6 +89,18 @@ class WritingPracState extends State<WritingPrac> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Main(cAnswers: cAnswers, tAnswers: tAnswers)),
+            );
+          },
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -101,13 +113,6 @@ class WritingPracState extends State<WritingPrac> {
               ),
             ),
             Text(
-              que,
-              style: TextStyle(
-                fontSize: 24.0,
-                color: Colors.white,
-              ),
-            ),
-            Text(
               odp,
               style: TextStyle(
                 fontSize: 24.0,
@@ -116,11 +121,17 @@ class WritingPracState extends State<WritingPrac> {
             ),
             TextField(
               decoration: InputDecoration(
-                labelText: (
-                    'ODPOWIEDZ'
+                labelText: 'ODPOWIEDŹ',
+                labelStyle: TextStyle(
+                  fontSize: 30.0,
+                  color: Colors.white,
                 ),
-                
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.white,
+                    width: 24.0,
+                  ),
+                ),
               ),
               onChanged: (text) {
                 setState(() {
@@ -140,17 +151,28 @@ class WritingPracState extends State<WritingPrac> {
                 color: Colors.white,
               ),
             ),
-            Row(
-              children: [
-                ElevatedButton(
-                  onPressed: sprawdz,
-                  child: Text('Sprawdz'),
-                ),
-                ElevatedButton(
-                  onPressed: nastepne,
-                  child: Text('Nastepne'),
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: sprawdz,
+                    child: Text('Sprawdz'),
+                    style: ButtonStyle(
+                      minimumSize: MaterialStateProperty.all(Size(80, 40)),
+                      padding: MaterialStateProperty.all(EdgeInsets.all(10)),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: nastepne,
+                    child: Text('Nastepne'),
+                    style: ButtonStyle(
+                      minimumSize: MaterialStateProperty.all(Size(80, 40)),
+                      padding: MaterialStateProperty.all(EdgeInsets.all(10)),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Text(
               "streak: " + streak.toString(),
