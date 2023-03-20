@@ -95,19 +95,31 @@ class WritingPracState extends State<WritingPrac> {
           children: <Widget>[
             Text(
               jen,
-              style: TextStyle(fontSize: 24.0),
+              style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.white,
+              ),
             ),
             Text(
               que,
-              style: TextStyle(fontSize: 24.0),
+              style: TextStyle(
+                fontSize: 24.0,
+                color: Colors.white,
+              ),
             ),
             Text(
               odp,
-              style: TextStyle(fontSize: 24.0),
+              style: TextStyle(
+                fontSize: 24.0,
+                color: Colors.white,
+              ),
             ),
             TextField(
               decoration: InputDecoration(
-                labelText: 'ODPOWIEDZ',
+                labelText: (
+                    'ODPOWIEDZ'
+                ),
+                
                 border: OutlineInputBorder(),
               ),
               onChanged: (text) {
@@ -116,10 +128,17 @@ class WritingPracState extends State<WritingPrac> {
                 });
               },
               controller: fieldText,
+              style: TextStyle(
+                fontSize: 24.0,
+                color: Colors.white,
+              ),
             ),
             Text(
               dz,
-              style: TextStyle(fontSize: 24.0),
+              style: TextStyle(
+                fontSize: 24.0,
+                color: Colors.white,
+              ),
             ),
             Row(
               children: [
@@ -135,7 +154,10 @@ class WritingPracState extends State<WritingPrac> {
             ),
             Text(
               "streak: " + streak.toString(),
-              style: TextStyle(fontSize: 24.0),
+              style: TextStyle(
+                fontSize: 24.0,
+                color: Colors.white,
+              ),
             ),
           ],
         ),
