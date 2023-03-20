@@ -26,15 +26,18 @@ class _MainState extends State<Main>{
             children: [
               const Image(image: AssetImage('img/lime.png')
                 ,fit: BoxFit.contain,
-                height: 300,
+                height: 200,
+              ),
+              const SizedBox(
+                height: 3.0,
               ),
               const Text(
                 'LIME',
-                style: TextStyle(color: Colors.lime, fontSize: 65),
+                style: TextStyle(color: Colors.lime, fontSize: 55),
               ),
               const Text(
                 'your language skills',
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                style: TextStyle(color: Colors.white, fontSize: 18),
               ),
               const SizedBox(
                 height: 50.0,
@@ -50,7 +53,7 @@ class _MainState extends State<Main>{
                   'Flashcards',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(25),
                 minWidth: 350, //ustawianie szerokości przycisku
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -58,7 +61,7 @@ class _MainState extends State<Main>{
                 ),
               ),
               const SizedBox(
-                height: 5.0,
+                height: 15.0,
               ),
               MaterialButton(
                 onPressed: () {
@@ -69,7 +72,7 @@ class _MainState extends State<Main>{
                 },
                 child: const Text('Writing practice',
                   style: TextStyle(color: Colors.white,fontSize: 20),),
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(25),
                 minWidth: 350, //ustawianie szerokości przycisku
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -77,7 +80,7 @@ class _MainState extends State<Main>{
                 ),
               ),
               const SizedBox(
-                height: 5.0,
+                height: 15.0,
               ),
               MaterialButton(
                 onPressed: () {
@@ -88,12 +91,15 @@ class _MainState extends State<Main>{
                 },
                 child: const Text('Stats',
                   style: TextStyle(color: Colors.white,fontSize: 20),),
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(25),
                 minWidth: 350, //ustawianie szerokości przycisku
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                   side: const BorderSide(color: Colors.grey),
                 ),
+              ),
+              const SizedBox(
+                height: 20.0,
               ),
             ],
           ),
