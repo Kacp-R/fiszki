@@ -121,16 +121,20 @@ class WritingPracState extends State<WritingPrac> {
               dz,
               style: TextStyle(fontSize: 24.0),
             ),
-            ElevatedButton(
-              onPressed: sprawdz,
-              child: Text('Sprawdz'),
-            ),
-            ElevatedButton(
-              onPressed: nastepne,
-              child: Text('Nastepne'),
+            Row(
+              children: [
+                ElevatedButton(
+                  onPressed: sprawdz,
+                  child: Text('Sprawdz'),
+                ),
+                ElevatedButton(
+                  onPressed: nastepne,
+                  child: Text('Nastepne'),
+                ),
+              ],
             ),
             Text(
-              "streak:" + streak.toString(),
+              "streak: " + streak.toString(),
               style: TextStyle(fontSize: 24.0),
             ),
           ],
