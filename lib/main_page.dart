@@ -24,7 +24,7 @@ class _MainState extends State<Main>{
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.network('https://download.logo.wine/logo/Lime_(transportation_company)/Lime_(transportation_company)-Icon-Logo.wine.png'
+              const Image(image: AssetImage('img/lime.png')
                 ,fit: BoxFit.contain,
                 height: 300,
               ),
