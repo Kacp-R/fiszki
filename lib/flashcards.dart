@@ -65,7 +65,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
               front: ClipRRect(
                 borderRadius: BorderRadius.circular(50),
                 child: Container(
-                  height: 500,
+                  height: 475,
                   width: 330,
                   color: Colors.white10,
                   child: Center(
@@ -79,7 +79,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
               back: ClipRRect(
                 borderRadius: BorderRadius.circular(50),
                 child: Container(
-                  height: 500,
+                  height: 475,
                   width: 330,
                   color: Colors.lime,
                   child: Center(
@@ -91,7 +91,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 25),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

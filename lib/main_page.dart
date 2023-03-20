@@ -24,6 +24,21 @@ class _MainState extends State<Main>{
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Image.network('https://download.logo.wine/logo/Lime_(transportation_company)/Lime_(transportation_company)-Icon-Logo.wine.png'
+                ,fit: BoxFit.contain,
+                height: 300,
+              ),
+              const Text(
+                'LIME',
+                style: TextStyle(color: Colors.lime, fontSize: 65),
+              ),
+              const Text(
+                'your language skills',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              const SizedBox(
+                height: 50.0,
+              ),
               MaterialButton(
                 onPressed: () {
                   Navigator.push(
@@ -31,8 +46,19 @@ class _MainState extends State<Main>{
                     MaterialPageRoute(builder: (context) => FlashcardsPage(cAnswers: cAnswers, tAnswers: tAnswers,)),
                   );
                 },
-                child: Text('Flashcards',
-                style: TextStyle(color: Colors.lime),),
+                child: const Text(
+                  'Flashcards',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                padding: const EdgeInsets.all(15),
+                minWidth: 350, //ustawianie szerokości przycisku
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  side: const BorderSide(color: Colors.grey),
+                ),
+              ),
+              const SizedBox(
+                height: 5.0,
               ),
               MaterialButton(
                 onPressed: () {
@@ -41,8 +67,17 @@ class _MainState extends State<Main>{
                     MaterialPageRoute(builder: (context) => WritingPrac()),
                   );
                 },
-                child: Text('Prac',
-                  style: TextStyle(color: Colors.lime),),
+                child: const Text('Writing practice',
+                  style: TextStyle(color: Colors.white,fontSize: 20),),
+                padding: const EdgeInsets.all(15),
+                minWidth: 350, //ustawianie szerokości przycisku
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  side: const BorderSide(color: Colors.grey),
+                ),
+              ),
+              const SizedBox(
+                height: 5.0,
               ),
               MaterialButton(
                 onPressed: () {
@@ -51,8 +86,14 @@ class _MainState extends State<Main>{
                     MaterialPageRoute(builder: (context) => Stats(cAnswers: cAnswers, tAnswers: tAnswers,)),
                   );
                 },
-                child: Text('Stats',
-                  style: TextStyle(color: Colors.lime),),
+                child: const Text('Stats',
+                  style: TextStyle(color: Colors.white,fontSize: 20),),
+                padding: const EdgeInsets.all(15),
+                minWidth: 350, //ustawianie szerokości przycisku
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  side: const BorderSide(color: Colors.grey),
+                ),
               ),
             ],
           ),
