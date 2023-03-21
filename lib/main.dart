@@ -8,16 +8,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Nauka języka',
+      title: 'LIME - master your language skills!',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.black,
-        primarySwatch: Colors.lime,
-        appBarTheme: AppBarTheme(
-          color: Colors.black,
-          foregroundColor: Colors.lime,
-        )
+          scaffoldBackgroundColor: Colors.black,
+          primarySwatch: Colors.lime,
+          appBarTheme: const AppBarTheme(
+            color: Colors.black,
+            foregroundColor: Colors.lime,
+          )),
+      home: const Main(
+        cAnswers: 0,
+        tAnswers: 0,
       ),
-      home: Main(cAnswers: 0, tAnswers: 0,),
     );
   }
 }
