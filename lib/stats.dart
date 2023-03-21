@@ -1,5 +1,6 @@
 //kacper
 import 'package:pie_chart/pie_chart.dart';
+import 'package:fiszki/main_page.dart';
 import 'package:flutter/material.dart';
 
 class Stats extends StatefulWidget {
@@ -27,7 +28,16 @@ class StatsState extends State<Stats> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(''),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Main(cAnswers: cAnswers, tAnswers: tAnswers)),
+            );
+          },
+        ),
       ),
       body: Center(
         child: Column(
