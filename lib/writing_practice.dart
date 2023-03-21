@@ -56,6 +56,7 @@ class WritingPracState extends State<WritingPrac> {
         if(podane.toLowerCase() == polish[lb].toLowerCase()){
           dz = "DOBRZE!!!";
           streak++;
+          cAnswers++;
         }
         else{
           dz = "ZLE>:(";
@@ -66,12 +67,14 @@ class WritingPracState extends State<WritingPrac> {
         if(podane.toLowerCase() == english[lb].toLowerCase()){
           dz = "DOBRZE!!!";
           streak++;
+          cAnswers++;
         }
         else{
           dz = "ZLE>:(";
           streak = 0;
         }
       }
+      tAnswers++;
     });
   }
 
