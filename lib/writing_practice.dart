@@ -6,8 +6,11 @@ import 'dart:math';
 // Zmniejszy to ilość kodu, i zwiększy ilość pytań.
 
 class WritingPrac extends StatefulWidget {
+  final int cAnswers, tAnswers;
+
+  const WritingPrac({super.key, required this.cAnswers, required this.tAnswers});
   @override
-  WritingPracState createState() => WritingPracState();
+  WritingPracState createState() => WritingPracState(cAnswers, tAnswers);
 }
 
 class WritingPracState extends State<WritingPrac> {
@@ -22,7 +25,9 @@ class WritingPracState extends State<WritingPrac> {
   String que = 'TEST';
   String odp = '', dz = "", podane = "", jen = "";
   int streak = 0;
-  int cAnswers = 0, tAnswers = 0;
+  int cAnswers, tAnswers;
+
+  WritingPracState(this.cAnswers, this.tAnswers);
   @override
   void initState() {
     super.initState();

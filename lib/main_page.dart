@@ -83,7 +83,7 @@ class _MainState extends State<Main> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => WritingPrac()),
+                  MaterialPageRoute(builder: (context) => WritingPrac(cAnswers: cAnswers, tAnswers: tAnswers,)),
                 );
               },
               padding: const EdgeInsets.all(25),
