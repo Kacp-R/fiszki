@@ -49,6 +49,7 @@ class StatsState extends State<Stats> {
               chartRadius: 80,
               legendOptions: LegendOptions(
                   legendTextStyle: TextStyle(color: Colors.white)),
+              chartValuesOptions: ChartValuesOptions(decimalPlaces: 0),
             )
           ],
         ),
