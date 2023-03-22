@@ -16,10 +16,10 @@ class WritingPrac extends StatefulWidget {
 class WritingPracState extends State<WritingPrac> {
   final fieldText = TextEditingController();
   final List<String> english = [
-    'Apple', 'Banana', 'Cherry', 'Dog', 'Elephant', 'Football', 'Guitar', 'House', 'Ice cream', 'Jacket'
+    'wealth', 'smelly', 'lace', 'doll', 'coach', 'eight', 'needy', 'breezy', 'vagabond', 'defiant', 'theory', 'rich', 'disgusting', 'day', 'word', 'literate', 'overrated', 'cat', 'label', 'shy', 'staking', 'radiate', 'repeat', 'silent', 'eye', 'houses', 'elite', 'four', 'calculating', 'hate', 'choke', 'pull', 'sun', 'spooky', 'early', 'abortive', 'kitty', 'farm', 'steadfast', 'memory', 'pen', 'telephone', 'tail', 'collar', 'mundane', 'synonymous', 'exercise', 'inconclusive', 'reduce', 'two',
   ];
   final List<String> polish = [
-    'Jablko', 'Banan', 'Wisnia', 'Pies', 'Slon', 'Pilkanozna', 'Gitara', 'Dom', 'lody', 'kurtka'
+    'bogactwo', 'śmierdzący', 'koronka', 'lalka', 'trener', 'ósemka', 'potrzebujący', 'brednie', 'wagabunda', 'wyuzdany', 'teoria', 'bogaty', 'obrzydliwy', 'dzień', 'słowo', 'literat', 'przereklamowany', 'kot', 'etykieta', 'nieśmiały', 'uderzenie', 'promieniowanie', 'powtarzanie', 'cichy', 'oko', 'domy', 'elita', 'cztery', 'wyrachowanie', 'nienawiść', 'dusić', 'ciągnąć', 'słońce', 'upiorny', 'wczesny', 'poroniony', 'kotek', 'gospodarstwo', 'niezłomny', 'pamięć', 'pióro', 'telefon', 'ogon', 'obroża', 'prozaiczny', 'synonim', 'ćwiczenie', 'nierozstrzygający', 'redukować', 'dwa',
   ];
   int lb = Random().nextInt(10);
   String que = 'TEST';
@@ -47,7 +47,7 @@ class WritingPracState extends State<WritingPrac> {
     losuj();
   }
   void losuj(){
-      lb = Random().nextInt(10);
+      lb = Random().nextInt(50);
       setState(() {
         if(jen == "EN --> PL") {
           odp = english[lb];
