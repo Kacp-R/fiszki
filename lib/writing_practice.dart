@@ -153,25 +153,29 @@ class WritingPracState extends State<WritingPrac> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                children: [
-                  ElevatedButton(
-                    onPressed: sprawdz,
-                    child: Text('Sprawdz'),
-                    style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(80, 40)),
-                      padding: MaterialStateProperty.all(EdgeInsets.all(10)),
+              child: Container(
+                margin: EdgeInsets.all(10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      onPressed: sprawdz,
+                      child: Text('Sprawdz'),
+                      style: ButtonStyle(
+                        minimumSize: MaterialStateProperty.all(Size(80, 40)),
+                        padding: MaterialStateProperty.all(EdgeInsets.all(10)),
+                      ),
                     ),
-                  ),
-                  ElevatedButton(
-                    onPressed: nastepne,
-                    child: Text('Nastepne'),
-                    style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(80, 40)),
-                      padding: MaterialStateProperty.all(EdgeInsets.all(10)),
+                    ElevatedButton(
+                      onPressed: nastepne,
+                      child: Text('Nastepne'),
+                      style: ButtonStyle(
+                        minimumSize: MaterialStateProperty.all(Size(80, 40)),
+                        padding: MaterialStateProperty.all(EdgeInsets.all(10)),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Text(
