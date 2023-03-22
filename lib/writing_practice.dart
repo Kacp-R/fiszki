@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:fiszki/main_page.dart';
 import 'dart:math';
+//Hej, Nikita! Tu KAcpR, Zamiast tych dwóch list zrob funkcję, która importuje flashcards_list,
+// i dla każdego indexu robi( english[i] = flashcards[i].pageone;  polish[i] = flashcards[i].pagetwo; ).
+// Zmniejszy to ilość kodu, i zwiększy ilość pytań.
 
 class WritingPrac extends StatefulWidget {
+  final int cAnswers, tAnswers;
+
+  const WritingPrac({super.key, required this.cAnswers, required this.tAnswers});
   @override
-  WritingPracState createState() => WritingPracState();
+  WritingPracState createState() => WritingPracState(cAnswers, tAnswers);
 }
 
 class WritingPracState extends State<WritingPrac> {
@@ -19,7 +25,9 @@ class WritingPracState extends State<WritingPrac> {
   String que = 'TEST';
   String odp = '', dz = "", podane = "", jen = "";
   int streak = 0;
-  int cAnswers = 0, tAnswers = 0;
+  int cAnswers, tAnswers;
+
+  WritingPracState(this.cAnswers, this.tAnswers);
   @override
   void initState() {
     super.initState();
@@ -56,6 +64,7 @@ class WritingPracState extends State<WritingPrac> {
         if(podane.toLowerCase() == polish[lb].toLowerCase()){
           dz = "DOBRZE!!!";
           streak++;
+          cAnswers++;
         }
         else{
           dz = "ZLE>:(";
@@ -66,12 +75,14 @@ class WritingPracState extends State<WritingPrac> {
         if(podane.toLowerCase() == english[lb].toLowerCase()){
           dz = "DOBRZE!!!";
           streak++;
+          cAnswers++;
         }
         else{
           dz = "ZLE>:(";
           streak = 0;
         }
       }
+      tAnswers++;
     });
   }
 
