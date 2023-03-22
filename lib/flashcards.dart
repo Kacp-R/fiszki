@@ -66,7 +66,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
             front: ClipRRect(
               borderRadius: BorderRadius.circular(50),
               child: Container(
-                height: 475,
+                height: 500,
                 width: 330,
                 color: Colors.white10,
                 child: Center(
@@ -80,7 +80,7 @@ class FlashcardsPageState extends State<FlashcardsPage> {
             back: ClipRRect(
               borderRadius: BorderRadius.circular(50),
               child: Container(
-                height: 475,
+                height: 500,
                 width: 330,
                 color: Colors.lime,
                 child: Center(
