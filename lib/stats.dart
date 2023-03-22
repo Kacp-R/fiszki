@@ -20,8 +20,8 @@ class StatsState extends State<Stats> {
 
   StatsState(this.cAnswers, this.tAnswers)
       : dataMap = {
-          'Poprawne': double.parse(cAnswers.toString()),
-          'Niepoprawne': double.parse((tAnswers - cAnswers).toString())
+          'Correct': double.parse(cAnswers.toString()),
+          'Incorrect ': double.parse((tAnswers - cAnswers).toString())
         };
 
   @override
@@ -43,24 +43,45 @@ class StatsState extends State<Stats> {
         child: Column(
           children: [
             Text(
-              'stats',
-              style: TextStyle(fontSize: 24.0, color: Colors.white),
+              'Stats',
+              style: TextStyle(fontSize: 40.0, color: Colors.white,fontWeight: FontWeight.w300),
             ),
-            Text(
-              '$cAnswers',
-              style: TextStyle(fontSize: 24.0, color: Colors.white),
-            ),
-            Text(
-              '$tAnswers',
-              style: TextStyle(fontSize: 24.0, color: Colors.white),
+            SizedBox(
+              height: 20,
             ),
             PieChart(
               dataMap: dataMap,
-              chartRadius: 80,
+              chartRadius: 230,
+              colorList: [
+                Colors.lime,
+                Colors.red,
+              ],
               legendOptions: LegendOptions(
                   legendTextStyle: TextStyle(color: Colors.white)),
               chartValuesOptions: ChartValuesOptions(decimalPlaces: 0),
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              '🟢 Correct answers: $cAnswers',
+              style: TextStyle(fontSize: 24.0, color: Colors.white),
+            ),
+            Text(
+              "   🔴 Incorrect answers: ${tAnswers - cAnswers}",
+              style: TextStyle(fontSize: 24.0, color: Colors.white),
+            ),
+            Text(
+              '🍭 Total answers: $tAnswers   ',
+              style: TextStyle(fontSize: 24.0, color: Colors.white),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Text(
+              "${(cAnswers / tAnswers * 100).toStringAsFixed(2)}% correct answers",
+              style: TextStyle(fontSize: 35.0, color: Colors.white,fontWeight: FontWeight.w300),
+            ),
           ],
         ),
       ),
