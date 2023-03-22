@@ -118,29 +118,29 @@ class WritingPracState extends State<WritingPrac> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
               child:Text(
                 jen,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 24.0,
                   color: Colors.white,
                 ),
               ),
             ),
             Container(
-              margin: EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
               child:Text(
                 odp,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 24.0,
                   color: Colors.white,
                 ),
               ),
             ),
             Container(
-              margin: EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
               child:TextField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'ODPOWIEDŹ',
                   labelStyle: TextStyle(
                     fontSize: 30.0,
@@ -159,46 +159,46 @@ class WritingPracState extends State<WritingPrac> {
                   });
                 },
                 controller: fieldText,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 24.0,
                   color: Colors.white,
                 ),
               ),
             ),
             Container(
-              margin: EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
               child:Text(
                 dz,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 24.0,
                   color: Colors.white,
                 ),
               ),
             ),
             Container(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               child:Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Container(
-                  margin: EdgeInsets.all(10),
+                  margin: const EdgeInsets.all(10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ElevatedButton(
                         onPressed: sprawdz,
-                        child: Text('Sprawdz'),
                         style: ButtonStyle(
-                          minimumSize: MaterialStateProperty.all(Size(80, 40)),
-                          padding: MaterialStateProperty.all(EdgeInsets.all(10)),
+                          minimumSize: MaterialStateProperty.all(const Size(80, 40)),
+                          padding: MaterialStateProperty.all(const EdgeInsets.all(10)),
                         ),
+                        child: const Text('Sprawdz'),
                       ),
                       ElevatedButton(
                         onPressed: nastepne,
-                        child: Text('Nastepne'),
                         style: ButtonStyle(
-                          minimumSize: MaterialStateProperty.all(Size(80, 40)),
-                          padding: MaterialStateProperty.all(EdgeInsets.all(10)),
+                          minimumSize: MaterialStateProperty.all(const Size(80, 40)),
+                          padding: MaterialStateProperty.all(const EdgeInsets.all(10)),
                         ),
+                        child: const Text('Nastepne'),
                       ),
                     ],
                   ),
@@ -206,10 +206,10 @@ class WritingPracState extends State<WritingPrac> {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               child:Text(
-                "streak: " + streak.toString(),
-                style: TextStyle(
+                "streak: $streak",
+                style: const TextStyle(
                   fontSize: 24.0,
                   color: Colors.white,
                 ),
