@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fiszki/main_page.dart';
 import 'dart:math';
-//Hej, Nikita! Tu KAcpR, Zamiast tych dwóch list zrob funkcję, która importuje flashcards_list,
-// i dla każdego indexu robi( english[i] = flashcards[i].pageone;  polish[i] = flashcards[i].pagetwo; ).
-// Zmniejszy to ilość kodu, i zwiększy ilość pytań.
 
 class WritingPrac extends StatefulWidget {
   final int cAnswers, tAnswers;
