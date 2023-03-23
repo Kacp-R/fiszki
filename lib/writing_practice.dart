@@ -146,7 +146,15 @@ class WritingPracState extends State<WritingPrac> {
                 ),
               ),
             ),
+            //UŻYTKOWNIK
             Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.white,
+                  width: 2.0,
+                ),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
               margin: const EdgeInsets.all(20),
               child: TextField(
                 decoration: InputDecoration(
@@ -154,13 +162,6 @@ class WritingPracState extends State<WritingPrac> {
                   labelStyle: TextStyle(
                     fontSize: 30.0,
                     color: Colors.white,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    borderSide: BorderSide(
-                      color: Colors.white,
-                      width: 2.0,
-                    ),
                   ),
                 ),
                 onChanged: (text) {
