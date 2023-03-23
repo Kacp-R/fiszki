@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fiszki/main_page.dart';
+import 'package:fiszki/flashcards_list.dart';
 import 'dart:math';
 
 class WritingPrac extends StatefulWidget {
@@ -12,23 +13,34 @@ class WritingPrac extends StatefulWidget {
 
 class WritingPracState extends State<WritingPrac> {
   final fieldText = TextEditingController();
-  final List<String> english = [
-    'wealth', 'smelly', 'lace', 'doll', 'coach', 'eight', 'needy', 'breezy', 'vagabond', 'defiant', 'theory', 'rich', 'disgusting', 'day', 'word', 'literate', 'overrated', 'cat', 'label', 'shy', 'staking', 'radiate', 'repeat', 'silent', 'eye', 'houses', 'elite', 'four', 'calculating', 'hate', 'choke', 'pull', 'sun', 'spooky', 'early', 'abortive', 'kitty', 'farm', 'steadfast', 'memory', 'pen', 'telephone', 'tail', 'collar', 'mundane', 'synonymous', 'exercise', 'inconclusive', 'reduce', 'two',
-  ];
-  final List<String> polish = [
-    'bogactwo', 'śmierdzący', 'koronka', 'lalka', 'trener', 'ósemka', 'potrzebujący', 'brednie', 'wagabunda', 'wyuzdany', 'teoria', 'bogaty', 'obrzydliwy', 'dzień', 'słowo', 'literat', 'przereklamowany', 'kot', 'etykieta', 'nieśmiały', 'uderzenie', 'promieniowanie', 'powtarzanie', 'cichy', 'oko', 'domy', 'elita', 'cztery', 'wyrachowanie', 'nienawiść', 'dusić', 'ciągnąć', 'słońce', 'upiorny', 'wczesny', 'poroniony', 'kotek', 'gospodarstwo', 'niezłomny', 'pamięć', 'pióro', 'telefon', 'ogon', 'obroża', 'prozaiczny', 'synonim', 'ćwiczenie', 'nierozstrzygający', 'redukować', 'dwa',
-  ];
+  final List<String> english;
+  final List<String> polish;
   int lb = Random().nextInt(10);
   String que = 'TEST';
   String odp = '', dz = "", podane = "", jen = "";
   int streak = 0;
   int cAnswers, tAnswers;
 
-  WritingPracState(this.cAnswers, this.tAnswers);
+  WritingPracState(this.cAnswers, this.tAnswers)
+  :english = [
+
+  ],
+  polish = [
+
+  ];
   @override
   void initState() {
     super.initState();
+    load();
     start();
+  }
+  void load(){
+    setState(() {
+      for(int i = 0; i<flashcards.length; i++){
+       english.add(flashcards[i].pageone);
+       polish.add(flashcards[i].pagetwo);
+      }
+    });
   }
   void start(){
     odp = '';
