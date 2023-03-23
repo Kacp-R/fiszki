@@ -139,17 +139,18 @@ class WritingPracState extends State<WritingPrac> {
             ),
             Container(
               margin: const EdgeInsets.all(20),
-              child:TextField(
-                decoration: const InputDecoration(
+              child: TextField(
+                decoration: InputDecoration(
                   labelText: 'ODPOWIEDŹ',
                   labelStyle: TextStyle(
                     fontSize: 30.0,
                     color: Colors.white,
                   ),
                   border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
                     borderSide: BorderSide(
                       color: Colors.white,
-                      width: 24.0,
+                      width: 2.0,
                     ),
                   ),
                 ),
@@ -159,7 +160,7 @@ class WritingPracState extends State<WritingPrac> {
                   });
                 },
                 controller: fieldText,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 24.0,
                   color: Colors.white,
                 ),
